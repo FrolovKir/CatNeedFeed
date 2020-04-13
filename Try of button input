@@ -1,0 +1,21 @@
+#include <Servo.h>
+#include "GyverButton.h"
+#define BTN_PIN 0
+#define servoPin 9
+GButton butt1(BTN_PIN);
+Servo myservo;
+void setup() {
+  {
+    Serial.begin(9600);
+    myservo.attach(servoPin);
+}
+
+}
+
+void loop() {
+   if (butt1.isSingle()) {
+    myservo.write(0); 
+delay(300); 
+myservo.write(160); 
+    }
+}
